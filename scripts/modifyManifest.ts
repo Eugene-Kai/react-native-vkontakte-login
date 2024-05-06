@@ -41,7 +41,7 @@ function modifyManifest() {
       console.warn('Manifest already contains VK activity');
     }
   } catch (e) {
-    console.warn(e.message);
+    console.warn((e as any).message);
     console.warn(
       'Failed to automatically update android manifest. Please continue manually.',
     );

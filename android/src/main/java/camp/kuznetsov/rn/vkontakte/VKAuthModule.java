@@ -94,6 +94,10 @@ public class VKAuthModule extends ReactContextBaseJavaModule implements Activity
 
         Collection<VKScope> scopeArray = new HashSet<>();
 
+        // scope=offline, так ты получишь бессрочный токен без привязок к айпи
+        // https://vk.com/topic-15957347_25001738
+        scopeArray.add(VKScope.OFFLINE);
+
         int scopesSize = scopes == null ? 0 : scopes.size();
         if(scopesSize != 0){
             for (VKScope vs : VKScope.values()) {
